@@ -1,0 +1,9 @@
+[Appearance]
+HideSkinBorders=true
+Skin=macchiato
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+KeepOpen=false
