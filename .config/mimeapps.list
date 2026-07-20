@@ -17,3 +17,5 @@ image/png=imv.desktop;
 text/plain=nvim.desktop;
 video/mkv=mpv.desktop;
 video/mp4=mpv.desktop;
+audio/mp3=rmpc;
+audio/flac=rmpc;

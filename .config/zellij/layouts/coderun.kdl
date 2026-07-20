@@ -1,0 +1,49 @@
+layout {
+	pane size=1 borderless=true {
+		plugin location="file:/home/partha/.config/zellij/plugins/zjstatus.wasm" {
+
+			hide_frame_except_for_search "false"
+
+			border_enabled  "false"
+			border_char     "─"
+			border_format   "#[fg=#6C7086]{char}"
+			border_position "bottom"
+
+			//      
+
+			format_left "#[fg=#363a4f]{mode}"
+			format_middle ""
+			format_right "#[fg=#89b4fa]#[fg=#000000,bg=#89b4fa] #[bg=#363a4f,fg=#89b4fa,bold] {session} #[fg=#363a4f,bold] {command_baticon}{command_batvalue} {datetime}"
+
+			format_space " "
+
+			// Mode indicator's colors & icons
+			mode_locked	 "#[bg=#363a4f,fg=#89B4FA,bold] LOCKED #[fg=#1D1E2D,bg=#89b4fa,bold] 󰌾 #[fg=#89b4fa]"
+			mode_normal	 "#[bg=#363a4f,fg=#ffc387,bold] NORMAL #[fg=#1D1E2D,bg=#ffc387,bold] 󰝆 #[fg=#ffc387]"
+			mode_rename_tab	 "#[bg=#363a4f,fg=#89B4FA,bold] RENAME #[fg=#1D1E2D,bg=#89b4fa,bold] 󰑕 #[fg=#89b4fa]"
+			mode_rename_pane "#[bg=#363a4f,fg=#89B4FA,bold] RENAME #[fg=#1D1E2D,bg=#89b4fa,bold] 󰑕 #[fg=#89b4fa]"
+			mode_resize	 "#[bg=#363a4f,fg=#89B4FA,bold] RESIZE #[fg=#1D1E2D,bg=#89b4fa,bold] 󰙖 #[fg=#89b4fa]"
+			mode_pane	 "#[bg=#363a4f,fg=#89B4FA,bold] PANES  #[fg=#1D1E2D,bg=#89b4fa,bold] 󰻎 #[fg=#89b4fa]"
+			mode_scroll	 "#[bg=#363a4f,fg=#89B4FA,bold] SCROLL #[fg=#1D1E2D,bg=#89b4fa,bold]  #[fg=#89b4fa]"
+			mode_session	 "#[bg=#363a4f,fg=#89B4FA,bold] SESSIONS #[fg=#1D1E2D,bg=#89b4fa,bold]  #[fg=#89b4fa]"
+
+			mode_default_to_mode "normal"
+
+			datetime		"#[fg=#363a4f]#[bg=#363a4f,fg=#89b4fa,bold]{format} #[fg=#363a4f,bg=#89b4fa] 󱑂 #[fg=#89b4fa]"
+			datetime_format		"%H:%M"
+			datetime_timezone	"Asia/Kolkata"
+
+			command_batvalue_command "/bin/bash /home/partha/.config/zellij/BatValue.sh"
+			command_batvalue_format  "#[fg=#89B4FA,bg=#363a4f]{stdout}%#[fg=#363a4f]"
+			command_batvalue_interval "1"
+			command_batvalue_rendermode "static"
+
+
+			command_baticon_command "/bin/bash /home/partha/.config/zellij/BatI.sh"
+			command_baticon_format  "#[fg=#89B4FA]#[bg=#89B4FA,fg=#1d1e2d]{stdout} "
+			command_baticon_interval "1"
+			command_baticon_rendermode "static"
+		}
+	}
+	pane
+}

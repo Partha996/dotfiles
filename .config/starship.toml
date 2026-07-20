@@ -111,9 +111,9 @@ deleted = '[󱕖](#e64553) '
 disabled = true
 
 [character]
-success_symbol = "[[ ](green) ❯](green)"
-error_symbol = "[[󰋔 ](red) ❯](red)"
-vimcmd_symbol = "[[ ](green) ❯](green)"
+success_symbol = "[❯](#6EA5AC)"
+error_symbol = "[❯](#e64553)"
+vimcmd_symbol = "[](#6EA5AC)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -125,20 +125,24 @@ read_only = "  "
 read_only_style = "#7287fd"
 
 [directory.substitutions]
-"documents" = "󰈙 "
-"downloads" = " "
-"pictures" = " "
-"Video" = " "
-"hypr" = " "
-"kitty" = "󰄛 "
-"yazi" = "󰇥 "
-"tmux" = " "
-"nvim" = " "
-"keyd" = " "
-"bat" = "󰭟 "
-"zathura" = " "
-"links" = " "
-"scripts" = "󰯂 "
+# "" = " "
+"/Documents/links" = "  "
+"/Sync/Documents" = "󱈖  "
+"/Documents" = "󰈙"
+"/Downloads" = ""
+"/pictures" = " "
+"/Videos/Movies" = "󱜇 "
+"/Videos" = " "
+"/Music" = " "
+"dotfiles/scripts" = "󰯂 "
+"dotfiles/.config/hypr" = " "
+"dotfiles/.config/kitty" = "󰄛 "
+"dotfiles/.config/yazi" = "󰇥 "
+"dotfiles/.config/tmux" = " "
+"dotfiles/.config/nvim" = " "
+"dotfiles/.config/keyd" = " "
+"dotfiles/.config/bat" = "󰭟 "
+"dotfiles/.config/zathura" = " "
 
 [battery]
 full_symbol = '🔋 '
@@ -173,3 +177,4 @@ style = "#89B4FB"
 style = '#dd7878'
 
 [sudo]
+symbol = '👿'

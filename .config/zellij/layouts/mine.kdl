@@ -1,0 +1,90 @@
+layout {
+	pane size=1 borderless=true {
+		plugin location="file:/home/partha/.config/zellij/plugins/zjstatus.wasm" {
+
+			// hide_frame_for_single_pane true
+			hide_frame_except_for_search true
+			border_enabled  false
+			border_char     "─"
+			border_format   "#[fg=#6C7086]{char}"
+			border_position "bottom"
+
+
+			//      
+			//Colors Define
+			color_text "#1e2030"
+			color_grey "#363a4f"
+			color_blue "#89b4fa"
+			color_pink "#CBA6F7"
+			color_green "#A6E3A1"
+			color_orange "#fab387"
+			color_lavender "#B4BEFE"
+			color_lightGrey "#181825"
+
+
+			format_left "#[fg=$grey]{mode}  {tabs}"
+			format_middle ""
+			format_right "#[fg=$blue]#[fg=$text,bg=$blue] #[bg=$grey,fg=$blue,bold] {session}#[fg=$grey,bold] {command_baticon}{command_batvalue} {datetime}"
+
+			format_space " "
+			format_hide_on_overlength "true"
+			format_precedence         "lrc"
+
+			tab_normal		"#[fg=$pink,italic]{index} #[fg=$grey,italic]{name} {floating_indicator}"
+			tab_normal_fullscreen 	"#[fg=$pink,italic]{index} #[fg=$grey,italic]{name} {fullscreen_indicator}"
+			tab_normal_sync 	"#[fg=$pink,italic]{index} #[fg=$grey,italic]{name} {sync_indicator}"
+
+
+			tab_active              "#[fg=$lavender]#[bg=$lavender,fg=$text,bold]{index} #[bg=$grey,fg=$lavender,bold] {name} {floating_indicator}#[fg=$grey,bold]"
+			tab_active_fullscreen   "#[fg=$lavender]#[bg=$lavender,fg=$text,bold]{index} #[bg=$grey,fg=$lavender,bold] {name} {fullscreen_indicator}#[fg=$grey,bold]"
+			tab_active_sync         "#[fg=$lavender]#[bg=$lavender,fg=$text,bold]{index} #[bg=$grey,fg=$lavender,bold] {name} {sync_indicator}#[fg=$grey,bold]"
+
+
+			// limit tab display count
+			tab_display_count         "11"
+			tab_truncate_start_format "#[fg=red,bg=$lightGrey] < +{count} ..."
+			tab_truncate_end_format   "#[fg=red,bg=$lightGrey] ... +{count} >"
+
+
+			// indicators
+			tab_sync_indicator       " "
+			tab_fullscreen_indicator " 󰊓"
+			tab_floating_indicator   " 󰹙"
+
+
+			// separator between the tabs
+			tab_separator	" "
+
+
+			// Mode indicator's colors & icons
+			mode_locked	 "#[bg=$grey,fg=$blue,bold] LOCKED #[fg=#1D1E2D,bg=$blue,bold] 󰌾 #[fg=$blue]"
+			mode_normal	 "#[bg=$grey,fg=$orange,bold] NORMAL #[fg=#1D1E2D,bg=$orange,bold] 󰝆 #[fg=$orange]"
+			mode_tmux	 "#[bg=$grey,fg=$orange,bold] TMUX #[fg=#1D1E2D,bg=$orange,bold]  #[fg=$orange]"
+			mode_pane	 "#[bg=$grey,fg=$pink,bold] PANES  #[fg=#1D1E2D,bg=$pink,bold] 󰻎 #[fg=$pink]"
+			mode_move	 "#[bg=$grey,fg=$pink,bold] MOVE  #[fg=#1D1E2D,bg=$pink,bold] 󰻎 #[fg=$pink]"
+			mode_rename_tab	 "#[bg=$grey,fg=$blue,bold] RENAME #[fg=#1D1E2D,bg=$blue,bold] 󰑕 #[fg=$blue]"
+			mode_rename_pane "#[bg=$grey,fg=$blue,bold] RENAME #[fg=#1D1E2D,bg=$blue,bold] 󰑕 #[fg=$blue]"
+			mode_resize	 "#[bg=$grey,fg=$blue,bold] RESIZE #[fg=#1D1E2D,bg=$blue,bold] 󰙖 #[fg=$blue]"
+			mode_scroll	 "#[bg=$grey,fg=$blue,bold] SCROLL #[fg=#1D1E2D,bg=$blue,bold]  #[fg=$blue]"
+			mode_session	 "#[bg=$grey,fg=$blue,bold] SESSIONS #[fg=#1D1E2D,bg=$blue,bold]  #[fg=$blue]"
+
+			mode_default_to_mode "locked"
+
+			datetime		"#[fg=$grey]#[bg=$grey,fg=$blue,bold]{format} #[fg=$grey,bg=$blue] 󱑂 #[fg=$blue]"
+			datetime_format		"%H:%M"
+			datetime_timezone	"Asia/Kolkata"
+
+			command_batvalue_command "/bin/bash /home/partha/.config/zellij/scripts/BatValue.sh"
+			command_batvalue_format  "#[fg=$blue,bg=$grey] {stdout}%#[fg=$grey]"
+			command_batvalue_interval "1"
+			command_batvalue_rendermode "static"
+
+
+			command_baticon_command "/bin/bash /home/partha/.config/zellij/scripts/BatIcon.sh"
+			command_baticon_format  "#[fg=$blue]#[bg=$blue,fg=#1D1E2D]{stdout} "
+			command_baticon_interval "1"
+			command_baticon_rendermode "static"
+		}
+	}
+	pane borderless=true
+}
